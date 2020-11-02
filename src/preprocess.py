@@ -25,7 +25,7 @@ def pre(train,song_meta,num_ng):
     train_song = train['songs']
     song_counter = Counter([song for songs in train_song for song in songs])
     song_dict = {x: song_counter[x] for x in song_counter}
-    song_dict = dict(filter(lambda x : x[1]>=300, song_dict.items())) # filtering song
+    song_dict = dict(filter(lambda x : x[1]>=100, song_dict.items())) # filtering song
 
     song_id_sid = dict()
     song_sid_id = dict()

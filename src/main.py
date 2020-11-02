@@ -27,7 +27,7 @@ def main():
                 help='learning rate')
     parser.add_argument('--epochs',
                 type=int,
-                default=10,
+                default=20,
                 help='learning rate')
     parser.add_argument('--batch_size',
                 type=int,
@@ -118,6 +118,7 @@ def main():
             loss.backward()
             optimizer.step()
             loss = loss.item()
+            wandb.log({'Batch Loss': loss})
             total_loss += loss
             count+=1
         t2 = time.time()
@@ -126,7 +127,6 @@ def main():
         engine = Engine()
         hit_ratio,ndcg = engine.evaluate(model,evaluate_data, epoch_id=epoch)
         wandb.log({"epoch" : epoch,
-                    "Loss" : total_loss/count,
                     "HR" : hit_ratio,
                     "NDCG" : ndcg})
         t2 = time.time()
