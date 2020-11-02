@@ -1,6 +1,9 @@
 import warnings
+import time
 import pandas as pd
 import numpy as np
+import random
+from random import sample 
 from collections import Counter
 
 
@@ -22,7 +25,7 @@ def pre(train,song_meta):
     train_song = train['songs']
     song_counter = Counter([song for songs in train_song for song in songs])
     song_dict = {x: song_counter[x] for x in song_counter}
-    song_dict = dict(filter(lambda x : x[1]>=10, song_dict.items())) # filtering song
+    song_dict = dict(filter(lambda x : x[1]>=300, song_dict.items())) # filtering song
 
     song_id_sid = dict()
     song_sid_id = dict()
@@ -52,5 +55,21 @@ def pre(train,song_meta):
     data = pd.DataFrame({"userId":user_train_1,"itemId":song_train_1,"rating":rat_train_1,"timestamp":dat_train_1})
 
     data['rank_latest'] = data.groupby(['userId'])['timestamp'].rank(method='first', ascending=False)
-    
-    return data
+    cand = []
+    t1 = time.time()
+    for songs in train['itemId']:
+        tot_songs = np.arange(n_songs)
+        #np.random.seed(42)
+        cand_0 = sample(tot_songs[np.isin(tot_songs,songs) == False].tolist(),4)
+        for c0 in cand_0:
+            cand.append(c0)
+    t2 = time.time()
+    user_train_0 = np.repeat(range(n_data), 4).reshape(-1,1)
+    song_train_0 = np.array(cand).reshape(-1,1)
+    rate_train_0 = np.repeat(0, n_data*4).reshape(-1,1)
+    print("Negative Sampling Time = ", t2-t1)
+    inputs = np.hstack([user_train_0,song_train_0,rate_train_0])
+    inputs = pd.DataFrame(inputs, columns = ["userId","itemId","rating"])
+
+    data = pd.concat([data, inputs])
+    return data,n_data,n_songs

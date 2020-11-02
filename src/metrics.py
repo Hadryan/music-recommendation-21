@@ -1,6 +1,6 @@
 import math
 import pandas as pd
-import math
+import numpy as np
 
 class MetronAtK(object):
     def __init__(self, top_k):

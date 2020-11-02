@@ -1,8 +1,7 @@
 import torch
 import random
 import pandas as pd 
-from copy import deepcopy
-from sklearn.model_selection import train_test_split
+import numpy as np
 from torch.utils.data import DataLoader, Dataset 
 from torch.utils.data.dataloader import Sampler
 
@@ -65,22 +64,13 @@ class SampleGenerator(object):
     
 
 
-    def instance_a_train_loader(self, num_negatives, batch_size):
-        users, items, ratings = [], [], []
-        train_ratings = pd.merge(self.train_ratings, self.negatives[['userId', 'negative_items']], on='userId')
-        train_ratings['negatives'] = train_ratings['negative_items'].apply(lambda x: random.sample(x, num_negatives))
-        for row in train_ratings.itertuples():
-            users.append(int(row.userId))
-            items.append(int(row.itemId))
-            ratings.append(float(row.rating))
-            for i in range(num_negatives):
-                users.append(int(row.userId))
-                items.append(int(row.negatives[i]))
-                ratings.append(float(0))  # negative samples get 0 rating
-        print("negative sampling complete")
-        dataset = UserItemRatingDataset(user_tensor=torch.LongTensor(users),
-                                        item_tensor=torch.LongTensor(items),
-                                        target_tensor=torch.FloatTensor(ratings))
+    def instance_a_train_loader(self, batch_size):
+        user = np.array(self.ratings["userId"])
+        item = np.array(self.ratings["itemId"])
+        rating = np.array(self.ratings["rating"])        
+        dataset = UserItemRatingDataset(user_tensor=torch.LongTensor(user),
+                                        item_tensor=torch.LongTensor(item),
+                                        target_tensor=torch.FloatTensor(rating))
         sampler = MySampler(dataset)
         return DataLoader(dataset, batch_size=batch_size, shuffle=False,pin_memory=True,num_workers=4,sampler=sampler)
 
