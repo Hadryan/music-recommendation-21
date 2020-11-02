@@ -18,7 +18,7 @@ def to_date(x):
 
 #preprocess
 
-def pre(train,song_meta):
+def pre(train,song_meta,num_ng):
     warnings.filterwarnings("ignore")
     n_data = len(train)
     train["nid"] = range(n_data) 
@@ -60,13 +60,13 @@ def pre(train,song_meta):
     for songs in train['itemId']:
         tot_songs = np.arange(n_songs)
         #np.random.seed(42)
-        cand_0 = sample(tot_songs[np.isin(tot_songs,songs) == False].tolist(),4)
+        cand_0 = sample(tot_songs[np.isin(tot_songs,songs) == False].tolist(),num_ng)
         for c0 in cand_0:
             cand.append(c0)
     t2 = time.time()
-    user_train_0 = np.repeat(range(n_data), 4).reshape(-1,1)
+    user_train_0 = np.repeat(range(n_data), num_ng).reshape(-1,1)
     song_train_0 = np.array(cand).reshape(-1,1)
-    rate_train_0 = np.repeat(0, n_data*4).reshape(-1,1)
+    rate_train_0 = np.repeat(0, n_data*num_ng).reshape(-1,1)
     print("Negative Sampling Time = ", t2-t1)
     inputs = np.hstack([user_train_0,song_train_0,rate_train_0])
     inputs = pd.DataFrame(inputs, columns = ["userId","itemId","rating"])

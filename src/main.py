@@ -7,8 +7,8 @@ import time
 import random
 from preprocess import to_date,pre
 from model import NeuralCF
-from data import SampleGenerator
-from engine import Engine
+from dataloader import SampleGenerator
+from evaluate import Engine
 from metrics import MetronAtK
 import matplotlib.pyplot as plt
 import wandb
@@ -61,7 +61,7 @@ def main():
 
     train = pd.read_json("/daintlab/data/music_rec/train.json")
     song_meta = pd.read_json("/daintlab/data/music_rec/song_meta.json")
-    data,n_data,n_songs=pre(train,song_meta)
+    data,n_data,n_songs=pre(train,song_meta,args.num_ng)
 
 
     # users,songs & Reindex
@@ -92,7 +92,7 @@ def main():
 
 
     t1 = time.time()
-    train_loader = sample_generator.instance_a_train_loader(args.num_ng, args.batch_size)
+    train_loader = sample_generator.instance_a_train_loader(args.batch_size)
     t2 = time.time()
     print("train_loader : ", t2 - t1)
 
