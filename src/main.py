@@ -33,6 +33,10 @@ def main():
                 type=int,
                 default=1024,
                 help='train batch size')
+    parser.add_argument('--songs',
+                type=int,
+                default=100,
+                help='filtering')
     parser.add_argument('--latent_dim_mf',
                 type=int,
                 default=8,
@@ -61,7 +65,7 @@ def main():
 
     train = pd.read_json("/daintlab/data/music_rec/train.json")
     song_meta = pd.read_json("/daintlab/data/music_rec/song_meta.json")
-    data,n_data,n_songs=pre(train,song_meta,args.num_ng)
+    data,n_data,n_songs=pre(train,song_meta,args.num_ng,args.songs)
 
 
     # users,songs & Reindex
