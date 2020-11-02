@@ -30,10 +30,9 @@ class NeuralCF(nn.Module):
     nn.init.normal_(self.song_embedding_mlp.weight, std=0.01)
  
     for m in self.MLP_layers:
-    				if isinstance(m, nn.Linear):
-					    nn.init.xavier_uniform_(m.weight)
-    nn.init.kaiming_uniform_(self.predict_layer.weight, 
-									a=1, nonlinearity='sigmoid')
+    		if isinstance(m, nn.Linear):
+					nn.init.xavier_uniform_(m.weight)
+    nn.init.kaiming_uniform_(self.predict_layer.weight, a=1, nonlinearity='sigmoid')
     
     for m in self.modules():
         if isinstance(m, nn.Linear) and m.bias is not None:
