@@ -7,14 +7,14 @@ The architecture was inspired by [Neural Collaborative Filtering](https://arxiv.
 ## Overview
 
 ### Dataset
-Dataset : [Melon playlist](https://arena.kakao.com/c/8)
+Dataset : [Melon playlist](https://arena.kakao.com/c/8) is used 
 
-* Users : 105141 
-* Songs : 35919  
+- [x] Users : 105141 
+- [x] Songs : 35919  
 
 ### Dataframe 
 
-Columns = ["userId","train_positive","train_negative","test_rating","test_negative"]<br>
+**Columns = ["userId","train_positive","train_negative","test_rating","test_negative"]**<br>
 >
 `userId` : user id<br>
 >
@@ -32,8 +32,8 @@ Columns = ["userId","train_positive","train_negative","test_rating","test_negati
 
 ### Metric 
 
-* NDCG
-* Hit Ratio 
+- [x] NDCG
+- [x] Hit Ratio 
 
 ---
 
@@ -41,7 +41,7 @@ Columns = ["userId","train_positive","train_negative","test_rating","test_negati
 
 ### Dependencies
 
-* Pytorch 
+- [x] Pytorch 
 
 
 ## Experiment results
