@@ -1,16 +1,16 @@
 # Music-recommendation
 
-The architecture was inspired by [Neural Collaborative Filtering](https://arxiv.org/abs/1708.05031)[![GitHub stars](https://img.shields.io/github/stars/hexiangnan/neural_collaborative_filtering.svg?logo=github&label=Stars)]
+**The architecture was inspired by [Neural Collaborative Filtering]**(https://arxiv.org/abs/1708.05031)[![GitHub stars](https://img.shields.io/github/stars/hexiangnan/neural_collaborative_filtering.svg?logo=github&label=Stars)]
 
 ---
 
 ## Overview
 
 ### Dataset
-Dataset : [Melon playlist](https://arena.kakao.com/c/8) is used 
+**Dataset : [Melon playlist](https://arena.kakao.com/c/8) is used** 
 
-- [x] Users : 105141 
-- [x] Songs : 35919  
+- [x] **Users : 105141** 
+- [x] **Songs : 35919**  
 
 ### Dataframe 
 
@@ -32,8 +32,8 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8) is used
 
 ### Metric 
 
-- [x] NDCG
-- [x] Hit Ratio 
+- [x] **NDCG**
+- [x] **Hit Ratio** 
 
 ---
 
@@ -41,16 +41,16 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8) is used
 
 ### Dependencies
 
-- [x] Pytorch 
+- [x] **Pytorch** 
 
 
 ## Experiment results
 
-`Num of Neg : 1,5,10`<br> 
+- [x] **Num of Neg : 1,5,10**<br> 
 >
-`Num Factor : 8,16,32`<br> 
+- [x] **Num Factor : 8,16,32**<br> 
 >
-`Num Layer : 1,2,3`<br>
+- [x] **Num Layer : 1,2,3**<br>
 
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
 |:-----:|:-------:|:----------:|:----------:|:---------:|
