@@ -13,7 +13,7 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8)
 
 ### Dataframe 
 
-- ["userId","train_positive","train_negative","test_rating","test_negative"]
+- Columns = ["userId","train_positive","train_negative","test_rating","test_negative"]
     + userId : user id
     + train_positive : interacted song
     + test_rating : Leave one out으로 고른 test song (곡 발매일 기준으로 최신 곡을 test song으로 분류)
@@ -22,7 +22,7 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8)
 
 ### Model 
 
-<img width='512' src='https://user-images.githubusercontent.com/52492949/98676852-7edb3700-239f-11eb-91e3-e6f40c2ece45.png'>
+<img width='1024' src='https://user-images.githubusercontent.com/52492949/98676852-7edb3700-239f-11eb-91e3-e6f40c2ece45.png'>
 
 ### Metric 
 
