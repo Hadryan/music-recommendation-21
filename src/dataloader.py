@@ -96,4 +96,4 @@ class SampleGenerator(object):
                                         item_tensor=torch.LongTensor(item),
                                         target_tensor=torch.FloatTensor(rating))
 
-        return DataLoader(dataset, batch_size=batch_size, shuffle=True)
+        return DataLoader(dataset, batch_size=batch_size, shuffle=True,num_workers=8)
