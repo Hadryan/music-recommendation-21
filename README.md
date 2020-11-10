@@ -1,6 +1,6 @@
 # Music-recommendation
 
-The architecture was inspired by [Neural Collaborative Filtering](https://arxiv.org/abs/1708.05031)[![GitHub stars](https://img.shields.io/github/stars/hexiangnan/neural_collaborative_filtering.svg?logo=github&label=Stars)]
+**The architecture was inspired by [Neural Collaborative Filtering](https://arxiv.org/abs/1708.05031)[![GitHub stars](https://img.shields.io/github/stars/hexiangnan/neural_collaborative_filtering.svg?logo=github&label=Stars)]**
 
 ---
 
@@ -33,7 +33,7 @@ The architecture was inspired by [Neural Collaborative Filtering](https://arxiv.
 ### Metric 
 
 - [x] **NDCG**
-- [x] **HIT RATIO** 
+- [x] **HR** 
 
 ---
 
