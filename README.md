@@ -33,7 +33,7 @@ The architecture was inspired by [Neural Collaborative Filtering](https://arxiv.
 ### Metric 
 
 - [x] **NDCG**
-- [x] **Hit Ratio** 
+- [x] **HIT RATIO** 
 
 ---
 
@@ -55,7 +55,7 @@ The architecture was inspired by [Neural Collaborative Filtering](https://arxiv.
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
 |:-----:|:-------:|:----------:|:----------:|:---------:|
 | 0.7912|   0.5140|      1     |      8     |     1     |
-| 0.7753|   0.5100|      5     |      8     |     1     |
+| 0.7880|   0.5260|      5     |      8     |     1     |
 | -     |  -      |      10    |      8     |     1     |
 | -     |  -      |      1     |      16    |     1     |
 | -     |  -      |      5     |      16    |     1     |
