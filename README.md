@@ -11,13 +11,14 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8)
 
 * Users : 105141 Songs : 35919  
 
-### Dataframe columns = ["userId","train_positive","train_negative","test_rating","test_negative"]<br>
+### Dataframe 
 
-* userId : user id
-* train_positive : interacted song
-* test_rating : Leave one out으로 고른 test song (곡 발매일 기준으로 최신 곡을 test song으로 분류)
-* test_negative : train_positive와 test_rating에 없는 곡들 중 랜덤하게 뽑은 각 유저당 99개의 곡들의 집합
-* train_negative : 각 interacted song당 num_negative 만큼 샘플링하기 위해 train_positive, test_rating, test_negative와 겹치지 않는 모든 곡들의 집합 
+* ["userId","train_positive","train_negative","test_rating","test_negative"]
+ + userId : user id
+ + train_positive : interacted song
+ + test_rating : Leave one out으로 고른 test song (곡 발매일 기준으로 최신 곡을 test song으로 분류)
+ + test_negative : train_positive와 test_rating에 없는 곡들 중 랜덤하게 뽑은 각 유저당 99개의 곡들의 집합
+ + train_negative : 각 interacted song당 num_negative 만큼 샘플링하기 위해 train_positive, test_rating, test_negative와 겹치지 않는 모든 곡들의 집합 
 
 ### Model 
 
@@ -39,7 +40,7 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8)
 
 ## 실험결과
 
-* Num of Neg : 1~10 
+* Num of Neg : 1,5,10 
 * Num Factor : 8,16,32 
 * Num Layer : 1,2,3
 
