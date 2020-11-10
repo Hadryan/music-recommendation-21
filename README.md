@@ -13,7 +13,7 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8)
 
 ### Dataframe 
 
-* ["userId","train_positive","train_negative","test_rating","test_negative"]
+- ["userId","train_positive","train_negative","test_rating","test_negative"]
  + userId : user id
  + train_positive : interacted song
  + test_rating : Leave one out으로 고른 test song (곡 발매일 기준으로 최신 곡을 test song으로 분류)
