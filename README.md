@@ -1,6 +1,6 @@
 # Music-recommendation
 
-The architecture was inspired by [Neural Collaborative Filtering](https://arxiv.org/abs/1708.05031)
+The architecture was inspired by [Neural Collaborative Filtering](https://arxiv.org/abs/1708.05031)[![GitHub stars](https://img.shields.io/github/stars/hexiangnan/neural_collaborative_filtering.svg?logo=github&label=Stars)]
 
 ---
 
@@ -19,11 +19,30 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8)
 * test_negative : train_positive와 test_rating에 없는 곡들 중 랜덤하게 뽑은 각 유저당 99개의 곡들의 집합
 * train_negative : 각 interacted song당 num_negative 만큼 샘플링하기 위해 train_positive, test_rating, test_negative와 겹치지 않는 모든 곡들의 집합 
 
-### Model [NCF] 
+### Model 
 
 <img width='512' src='https://user-images.githubusercontent.com/52492949/98676852-7edb3700-239f-11eb-91e3-e6f40c2ece45.png'>
 
+### Metric 
+
+* NDCG
+* Hit Ratio 
+
+---
+
+## How to use 
+
+### Dependencies
+
+* Pytorch 
+
+
 ## 실험결과
+
+* Num of Neg : 1~10 
+* Num Factor : 8,16,32 
+* Num Layer : 1,2,3
+
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
 |:-----:|:-------:|:----------:|:----------:|:---------:|
 | 0.7912|   0.5140|      1     |      8     |     1     |
@@ -35,15 +54,6 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8)
 | -     |  -      |      1     |      32    |     1     |
 | -     |  -      |      5     |      32    |     1     |
 | -     |  -      |      10    |      32    |     1     |
-| -     |  -      |      1     |      8     |     2     |
-| -     |  -      |      5     |      8     |     2     |
-| -     |  -      |      10    |      8     |     2     |
-| -     |  -      |      1     |      16    |     2     |
-| -     |  -      |      5     |      16    |     2     |
-| -     |  -      |      10    |      16    |     2     |
-| -     |  -      |      1     |      32    |     2     |
-| -     |  -      |      5     |      32    |     2     |
-| -     |  -      |      10    |      32    |     2     |
 | 0.8030|   0.5412|      1     |      8     |     3     |
 | 0.8026|   0.5524|      5     |      8     |     3     |
 | 0.7696|   0.5324|      10    |      8     |     3     |
@@ -53,3 +63,9 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8)
 | -     |  -      |      1     |      32    |     3     |
 | -     |  -      |      5     |      32    |     3     |
 | -     |  -      |      10    |      32    |     3     |
+
+
+### Run Example 
+```sh
+python3 main.py --optim=adam --lr=1e-3 --epochs=20 --batch_size=1024 --latent_dim_mf=8 --num_layers=3 --num_neg=5 --l2=0.0 --gpu=2,3
+``` 
