@@ -38,7 +38,7 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8)
 * Pytorch 
 
 
-## 실험결과
+## Experiment results
 
 * Num of Neg : 1,5,10 
 * Num Factor : 8,16,32 
@@ -47,7 +47,7 @@ Dataset : [Melon playlist](https://arena.kakao.com/c/8)
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
 |:-----:|:-------:|:----------:|:----------:|:---------:|
 | 0.7912|   0.5140|      1     |      8     |     1     |
-| 0.7753|  -0.5100|      5     |      8     |     1     |
+| 0.7753|   0.5100|      5     |      8     |     1     |
 | -     |  -      |      10    |      8     |     1     |
 | -     |  -      |      1     |      16    |     1     |
 | -     |  -      |      5     |      16    |     1     |
