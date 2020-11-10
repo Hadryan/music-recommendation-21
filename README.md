@@ -12,8 +12,6 @@
 - [x] **Users : 105141** 
 - [x] **Songs : 35919**  
 
-### Dataframe 
-
 **Columns = ["userId","train_positive","train_negative","test_rating","test_negative"]**<br>
 >
 `userId` : user id<br>
