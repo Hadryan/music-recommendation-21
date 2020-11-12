@@ -41,9 +41,9 @@
 
 <p align="left">
   <a href="#">
-    <img src="svg/dev/languages/python.svg" alt="python" style="vertical-align:top; margin:6px 4px">
+    <img src="https://github.com/MikeCodesDotNET/svg/dev/languages/python.svg" alt="python" style="vertical-align:top; margin:6px 4px">
   </a> 
-  
+
 </p>
 ### Tools
 <p align="left">
