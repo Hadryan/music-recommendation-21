@@ -60,8 +60,7 @@
 - [x] **Num Factor : 8,16,32**<br> 
 >
 - [x] **Num Layer : 1,2,3**<br>
-
-
+>
 <details><summary><b>Click me :heavy_exclamation_mark:<b></summary>
 <p>
 
