@@ -61,7 +61,7 @@
 >
 - [x] **Num Layer : 1,2,3**<br>
 
-<details><summary><h3>Click:heavy_exclamation_mark:</h3></summary>
+<details><summary>Click:heavy_exclamation_mark:</summary>
 <p>
 
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
