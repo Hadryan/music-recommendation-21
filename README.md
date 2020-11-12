@@ -71,9 +71,7 @@
 - [x] **Num Layer : 1,2,3**<br>
 
 <details>
-    <summary>  <h2>Total Experiment results</h2> 
-    </summary>
-<div markdown="1">
+    <summary><h2>Total Experiment results</h2></summary>
 
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
 |:-----:|:-------:|:----------:|:----------:|:---------:|
@@ -96,7 +94,6 @@
 | -     |  -      |      5     |      32    |     3     |
 | -     |  -      |      10    |      32    |     3     |
 
-</div>
 </details>
 
 ### Run Example 
