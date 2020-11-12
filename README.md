@@ -70,7 +70,8 @@
 >
 - [x] **Num Layer : 1,2,3**<br>
 
-<details><summary><h2>Click!</h2></summary>
+<details><summary><h2>Click! :heavy_exclamation_mark:</h2></summary>
+<p>
 
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
 |:-----:|:-------:|:----------:|:----------:|:---------:|
@@ -93,6 +94,7 @@
 | -     |  -      |      5     |      32    |     3     |
 | -     |  -      |      10    |      32    |     3     |
 
+<p>
 </details>
 
 ### Run Example 
