@@ -12,7 +12,6 @@
 - [x] **Users : 105141** 
 - [x] **Songs : 35919**  
 
-**Columns = ["userId","train_positive","train_negative","test_rating","test_negative"]**<br>
 >
 `userId` : user id<br>
 >
@@ -71,6 +70,11 @@
 >
 - [x] **Num Layer : 1,2,3**<br>
 
+<details>
+    <summary>  <h2>Total Experiment results</h2> 
+    </summary>
+<div markdown="1">
+
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
 |:-----:|:-------:|:----------:|:----------:|:---------:|
 | 0.7912|   0.5140|      1     |      8     |     1     |
@@ -92,6 +96,8 @@
 | -     |  -      |      5     |      32    |     3     |
 | -     |  -      |      10    |      32    |     3     |
 
+</div>
+</details>
 
 ### Run Example 
 ```sh
