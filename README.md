@@ -9,8 +9,8 @@
 ### Dataset
 **Dataset : [Melon playlist](https://arena.kakao.com/c/8) is used** 
 
-- [x] **Users : 105141** 
-- [x] **Songs : 35919**  
+  - [x] **Users : 105141** 
+  - [x] **Songs : 35919**  
 
 ### Model 
 
@@ -55,10 +55,13 @@
 
 ## Experiment results
 
-> - [x] **Num of Neg : 1,5,10**<br> 
-> - [x] **Num Factor : 8,16,32**<br> 
-> - [x] **Num Layer : 1,2,3**<br>
->        > <details><summary><b>Click me :heavy_exclamation_mark:<b></summary>
+- [x] **Num of Neg : 1,5,10**<br> 
+>
+- [x] **Num Factor : 8,16,32**<br> 
+>
+- [x] **Num Layer : 1,2,3**<br>
+>
+  - <details><summary><b>Click me :heavy_exclamation_mark:<b></summary>
 <p>
 
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
