@@ -53,7 +53,9 @@
 
 ---
 
-## Experiment results
+## Experiment 
+
+### Hyperparameter
 
 - [x] **Num of Neg : 1,5,10**<br> 
 >
@@ -61,7 +63,10 @@
 >
 - [x] **Num Layer : 1,2,3**<br>
 >
-  <details><summary><b>Click me :heavy_exclamation_mark:<b></summary>
+
+### Results
+
+<details><summary><b>Click me :heavy_exclamation_mark:<b></summary>
 <p>
 
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
