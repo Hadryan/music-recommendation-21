@@ -37,9 +37,23 @@
 
 ## How to use 
 
-### Dependencies
+### Languages 
+<p align="left">
+  <a href="#">
+    <img src="svg/dev/languages/python.svg" alt="python" style="vertical-align:top; margin:6px 4px">
+  </a> 
 
-- [x] **Pytorch** 
+### Tools
+<p align="left">
+  <a href="#">
+    <img src="svg/dev/tools/docker.svg" alt="docker" style="vertical-align:top; margin:6px 4px">
+  </a> 
+  <a href="#">
+    <img src="svg/dev/tools/bash.svg" alt="bash" style="vertical-align:top; margin:6px 4px">
+  </a> 
+  <a href="#">
+    <img src="svg/dev/tools/visualstudio_code.svg" alt="visualstudio_code" style="vertical-align:top; margin:6px 4px">
+  </a> 
 
 
 ## Experiment results
@@ -53,7 +67,7 @@
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
 |:-----:|:-------:|:----------:|:----------:|:---------:|
 | 0.7912|   0.5140|      1     |      8     |     1     |
-| + Green. 0.8013|   + Green. 0.5444|      5     |      8     |     1     |
+| 0.8013|   0.5444|      5     |      8     |     1     |
 | 0.7469|   0.5026|      10    |      8     |     1     |
 | 0.8224|   0.5610|      1     |      16    |     1     |
 | 0.8270|   0.5853|      5     |      16    |     1     |
