@@ -66,7 +66,7 @@
 
 ### Results
 
-<details><summary><b>Click me :heavy_exclamation_mark:<b></summary>
+<details><summary><b>Click me:heavy_exclamation_mark:<b></summary>
 <p>
 
 | HR@10 | NDCG@10 | Num of Neg | Num Factor | Num Layer |
