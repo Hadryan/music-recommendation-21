@@ -15,7 +15,7 @@
 ## Files
 > `split.py`: prepare train/test dataset
 >
-> `Data_Loader.py`: preprocess
+> `dataloader.py`: preprocess
 >
 > `metrics.py`: evaluation metrics including hit ratio(HR) and NDCG
 >
