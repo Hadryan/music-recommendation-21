@@ -55,46 +55,46 @@ git clone https://github.com/ssuncheol/music-recommendation.git
 
 ### Model 
 
+I use neural collaborative filtering. model's structure as follows 
+
 <img width='768' src='https://user-images.githubusercontent.com/52492949/98954675-60ad3c80-2541-11eb-9b62-723bccbcf860.png'>
 
-### Metric 
+### Evaluation metrics
 
-- [x] **NDCG@10**
-- [x] **HR@10** 
+- NDCG@10
+- HR@10
 
----
 
-## How to use 
+## Experiments 
 
-### Languages 
+I use Melon-playlist Dataset to train and evaluate model 
 
-<p align="left">
-  <a href="#">
-    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/languages/python.svg" alt="python" style="vertical-align:top; margin:6px 4px">
-  </a> 
+### Arguments
+| Args 	| Type 	| Description 	| Default|
+|:---------:|:--------:|:----------------------------------------------------:|:-----:|
+| Epochs 	| [int] 	| Epochs | 20|
+| Batch_size 	| [int] 	| Batch size| 1024|
+| Optimizer 	| [str]	| Adam| 	Adam|
+| Batch size 	| [int]	| Batch size| 	1024|
+| Latent dim 	| [int]	| Latent dim| 	8|
+| Num layers 	| [int]	| Num layers| 	3|
+| Negative samples 	| [int]	| Negative samples| 	4|
+| Learning rate 	| [float]	| Learning rate | 1e-3|
+| L2-norm	| [float]	| L2-norm | 0.0|
+| GPU 	| [str]	| GPU | '0' |
 
-</p>
 
-### Tools
+### How to train 
 
-<p align="left">
-  <a href="#">
-    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/tools/docker.svg" alt="docker" style="vertical-align:top; margin:6px 4px">
-  </a> 
+```sh
+python3 main.py --optim=adam --lr=1e-3 --epochs=20 --batch_size=1024 --latent_dim_mf=8 --num_layers=3 --num_neg=4 --l2=0.0 --gpu=2,3
+``` 
 
-  <a href="#">
-    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/tools/bash.svg" alt="bash" style="vertical-align:top; margin:6px 4px">
-  </a> 
 
-  <a href="#">
-    <img src="https://github.com/MikeCodesDotNET/ColoredBadges/blob/master/svg/dev/tools/visualstudio_code.svg" alt="visualstudio_code" style="vertical-align:top; margin:6px 4px">
-  </a> 
-
-</p>
 
 ---
 
-## Experiment :rocket:
+## Experiment results 
 
 <details>
     <summary>  <b> Negative Samples : 1,5,10<b> 
@@ -286,7 +286,6 @@ git clone https://github.com/ssuncheol/music-recommendation.git
 
 ---
 
-### Run Example 
-```sh
-python3 main.py --optim=adam --lr=1e-3 --epochs=20 --batch_size=1024 --latent_dim_mf=8 --num_layers=3 --num_neg=5 --l2=0.0 --gpu=2,3
-``` 
+### Reference 
+
+- [Neural Collaborative Filtering](https://arxiv.org/abs/1708.05031, "Neural Collaborative Filtering")
