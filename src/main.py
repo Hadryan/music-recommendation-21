@@ -11,10 +11,11 @@ from evaluate import Engine
 from metrics import MetronAtK
 import wandb
 import warnings
+
 warnings.filterwarnings("ignore")
 
 def main():
-    wandb.init(project="recommendation")
+    
     parser = argparse.ArgumentParser()
     parser.add_argument('--optim',
                 type=str,
@@ -53,28 +54,33 @@ def main():
                 default='0',
                 help='gpu number')
     args = parser.parse_args()
+
+    # wandb 
+    wandb.init(project="recommendation")
     wandb.config.update(args)
     
+    # define gpu device 
     os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 
+    # load the data 
     data = pd.read_feather("melon_35919.ftr")
-    print(data)
+    
     MD = Make_Dataset(ratings = data)
     user, item, rating = MD.trainset
     evaluate_data = MD.evaluate_data
 
 
-    #NCF model
+    # load the model(ncf)
     model = NeuralCF(num_users= len(data),num_items = 35919, 
                      embedding_size = args.latent_dim_mf,
                      num_layers = args.num_layers)
     model.cuda()
     model = nn.DataParallel(model)
-    print(model)
+    
     optimizer = torch.optim.Adam(model.parameters(),lr=args.lr,weight_decay=args.l2)
     criterion = nn.BCEWithLogitsLoss()
+    
     wandb.watch(model)
-
 
     N = []
     patience = 0
@@ -88,7 +94,8 @@ def main():
                                  rating = rating, ratings = data, 
                                  positive_len = MD.positive_len, num_neg = args.num_neg)
         train_loader = sample.instance_a_train_loader(args.batch_size)
-        print("Train Loader 생성 완료")
+        print("Generate train data!")
+
         for batch_id, batch in enumerate(train_loader):
             users, items, ratings = batch[0], batch[1], batch[2]
             ratings = ratings.float()
@@ -105,6 +112,8 @@ def main():
         t2 = time.time()
         print("train : ", t2 - t1) 
  
+
+        # define engine
         engine = Engine()
         hit_ratio,ndcg = engine.evaluate(model,evaluate_data, epoch_id=epoch)
         wandb.log({"epoch" : epoch,
@@ -114,7 +123,7 @@ def main():
 
         if N[-1] < max(N):
             if patience > 10:
-                print("Patience = 10 초과")
+                print("Patience = 10 over")
                 print("ndcg = {:.4f}".format(max(N)))
                 break
             else:
@@ -126,10 +135,11 @@ def main():
 
     
 if __name__ == '__main__':
+    
     file_name = "melon_35919.ftr"
-    if os.path.exists(file_name):
-        print("Data 존재")
+    
+    if os.path.exists(file_name): 
         main()
-    else:
-        print("데이터 없음")
+    
+        
         

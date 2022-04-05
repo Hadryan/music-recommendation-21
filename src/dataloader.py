@@ -39,7 +39,7 @@ class Make_Dataset(object):
         
         
     def _trainset(self, ratings):
-        #학습 데이터를 생성한다.
+        #make train data 
         user = np.array(np.repeat(ratings["userId"], self.positive_len))
         item = np.array([item for items in ratings['train_positive'] for item in items])
         rating = np.repeat(1, self.positive_len.sum()).reshape(-1)
@@ -63,10 +63,10 @@ class Make_Dataset(object):
     
 class SampleGenerator(object):
     def __init__(self, user, item, rating, ratings, positive_len,num_neg):
-        self.user = user # 전처리한 데이터
-        self.item = item # 전처리한 데이터
-        self.rating = rating # 전처리한 데이터
-        self.ratings = ratings # 원본 데이터
+        self.user = user 
+        self.item = item 
+        self.rating = rating # preprocessed data
+        self.ratings = ratings # g.t data 
         self.num_neg = num_neg
         self.positive_len = positive_len
         self.train_user, self.train_item, self.train_rating = self.total_train(ratings, positive_len, num_neg)
@@ -84,7 +84,6 @@ class SampleGenerator(object):
         train_item = np.hstack((self.item,negative_item))
         train_rating = np.hstack((self.rating,negative_rating))
  
-        #print(train_user.shape, train_item.shape, train_rating.shape)
         return train_user, train_item, train_rating
     
     

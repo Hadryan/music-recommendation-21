@@ -10,7 +10,9 @@ class NeuralCF(nn.Module):
         self.user_embedding_mlp = nn.Embedding(num_users,int(embedding_size*(2**(num_layers-1))))
         self.song_embedding_mlp = nn.Embedding(num_items,int(embedding_size*(2**(num_layers-1))))
    
-    #make mlp_modules
+        
+        #make mlp_modules
+        
         MLP_modules = []
         for i in range(num_layers):
             input_size = embedding_size*(2**(num_layers-i))
