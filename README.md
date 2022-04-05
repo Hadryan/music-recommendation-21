@@ -1,16 +1,42 @@
-# Music-recommendation
+## Kakao Music recommendation : A Pytorch Implementation 
 
 **The architecture was inspired by [Neural Collaborative Filtering](https://arxiv.org/abs/1708.05031)[![GitHub stars](https://img.shields.io/github/stars/hexiangnan/neural_collaborative_filtering.svg?logo=github&label=Stars)]**
 
 ---
 
-## Overview
+## Requirements 
 
-### Dataset
-**Dataset : [Melon playlist](https://arena.kakao.com/c/8) is used** 
+```shell
+Cuda 11.0
+Python3 3.8
+PyTorch 1.8 
+Torchvision 0.10.0
+```
 
-  - [x] **Users : 105141** 
-  - [x] **Songs : 35919**  
+## Quickstart
+
+### Weights & Biases(Visualization tool)
+
+- Before starting, you should login wandb using your personal API key. 
+- Weights & Biases : https://wandb.ai/site
+
+```shell
+!pip install wandb
+wandb login PERSONAL_API_KEY
+```
+
+### Cloning a repository
+
+```shell
+git clone https://github.com/ssuncheol/music-recommendation.git
+```
+
+### Prepare a dataset
+
+- Download [Melon playlist](https://arena.kakao.com/c/8) from open-source 
+
+  -  Users : 105141 
+  -  Songs : 35919 
 
 ## Files
 > `split.py`: prepare train/test dataset
