@@ -53,7 +53,7 @@ git clone https://github.com/ssuncheol/music-recommendation.git
 
 ---
 
-### Model 
+## Model 
 
 I use neural collaborative filtering. model's structure as follows 
 
@@ -64,6 +64,7 @@ I use neural collaborative filtering. model's structure as follows
 - NDCG@10
 - HR@10
 
+---
 
 ## Experiments 
 
@@ -286,6 +287,6 @@ python3 main.py --optim=adam --lr=1e-3 --epochs=20 --batch_size=1024 --latent_di
 
 ---
 
-### Reference 
+## Reference 
 
 - [Neural Collaborative Filtering](https://arxiv.org/abs/1708.05031, "Neural Collaborative Filtering")
