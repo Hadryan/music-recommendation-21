@@ -288,5 +288,4 @@ python3 main.py --optim=adam --lr=1e-3 --epochs=20 --batch_size=1024 --latent_di
 ---
 
 ## Reference 
-
-- [Neural Collaborative Filtering](https://arxiv.org/abs/1708.05031, "Neural Collaborative Filtering")
+- He, X., Liao, L., Zhang, H., Nie, L., Hu, X., & Chua, T. S. (2017, April). Neural collaborative filtering. In Proceedings of the 26th international conference on world wide web (pp. 173-182).
